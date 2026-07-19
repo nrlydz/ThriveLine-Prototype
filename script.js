@@ -1,3 +1,19 @@
+function showScreen(screenId) {
+  // Hide all screens
+  let screens = ["store-screen","age-screen","hub-screen","wallet-screen","phone-home","chrome-screen"];
+  screens.forEach(id => {
+    let el = document.getElementById(id);
+    el.style.display = "none";
+    el.classList.remove("fade-in");
+  });
+
+  // Show the requested screen with fade-in
+  let screen = document.getElementById(screenId);
+  screen.style.display = "block";
+  screen.classList.add("fade-in");
+}
+
+
 // Download → Open flow
 function downloadApp() {
   let btn = document.getElementById("download-btn");
