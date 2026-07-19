@@ -1,6 +1,8 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #eef2f7;
+  background: linear-gradient(-45deg, #00c6ff, #0072ff, #00c6ff, #0072ff);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,14 +10,28 @@ body {
   margin: 0;
 }
 
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
 .container {
   background: white;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgba(0, 114, 255, 0.4);
   width: 350px;
   text-align: center;
+  animation: pulseGlow 3s infinite alternate;
 }
+
+@keyframes pulseGlow {
+  from { box-shadow: 0 0 15px rgba(0, 114, 255, 0.3); }
+  to   { box-shadow: 0 0 35px rgba(0, 114, 255, 0.6); }
+}
+
 
 .app-icon {
   width: 100px;      /* adjust size */
