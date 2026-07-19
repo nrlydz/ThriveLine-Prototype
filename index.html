@@ -4,40 +4,98 @@
   <meta charset="UTF-8">
   <title>ThriveLine Prototype</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Age Verification Screen -->
-  <div id="age-screen">
-    <h2>Verify Your Age</h2>
-    <button onclick="goToHub()">I am 17–24</button>
-  </div>
+  <div class="container">
 
-  <!-- Safety Hub -->
-  <div id="hub-screen" style="display:none;">
-    <h2>Safety Hub</h2>
-    <button onclick="showAlert()">Report Issue</button>
-    <button>Connect to Mentor</button>
-    <button>Wellness Feed</button>
-    <button onclick="goToWallet()">Credential Wallet</button>
-  </div>
+    <!-- App Store Page -->
+    <div id="store-screen">
+      <img src="https://via.placeholder.com/100" alt="App Icon" class="app-icon">
+      <h1>ThriveLine</h1>
+      <p>Your trusted safety companion for youth.</p>
+      <div class="stars">⭐⭐⭐⭐☆ (4.2)</div>
+      <p>Over 10,000 downloads</p>
+      <img src="https://via.placeholder.com/300x150" alt="Screenshot" class="screenshot">
+      <button id="download-btn" onclick="downloadApp()">Download</button>
+    </div>
 
-  <!-- Risk Alert -->
-  <div id="alert" style="display:none;">
-    <p>⚠️ Possible scam detected — here’s why.</p>
-    <button onclick="closeAlert()">Close</button>
-  </div>
+    <!-- Age Verification -->
+    <div id="age-screen" style="display:none;">
+      <h2><i class="fas fa-id-card"></i> Verify Your Age</h2>
+      <div class="selectors">
+        <select id="day"></select>
+        <select id="month">
+          <option>January</option><option>February</option><option>March</option>
+          <option>April</option><option>May</option><option>June</option>
+          <option>July</option><option>August</option><option>September</option>
+          <option>October</option><option>November</option><option>December</option>
+        </select>
+        <select id="year"></select>
+      </div>
+      <button onclick="verifyAge()">Continue</button>
+      <p id="age-message" style="color:red;"></p>
+    </div>
 
-  <!-- Credential Wallet -->
-  <div id="wallet-screen" style="display:none;">
-    <h2>Credential Wallet</h2>
-    <p>Verified Badges:</p>
-    <ul>
-      <li>🎓 Verified Student</li>
-      <li>🤝 Trusted Mentor</li>
-    </ul>
-    <button onclick="goBackToHub()">Back to Hub</button>
-  </div>
+    <!-- Safety Hub -->
+    <div id="hub-screen" style="display:none;">
+      <h2><i class="fas fa-shield-alt"></i> Safety Hub</h2>
+      <div class="risk-counter">
+        <h1 id="risk-number">0</h1>
+        <p>Risks Detected</p>
+      </div>
+      <div class="protections">
+        <label><input type="checkbox" checked> Scam Detection</label>
+        <label><input type="checkbox" checked> Doxxing Protection</label>
+        <label><input type="checkbox" checked> Grooming Alerts</label>
+        <label><input type="checkbox"> Wellness‑Aligned Feed Throttle</label>
+      </div>
+      <div class="support">
+        <button><i class="fas fa-user-friends"></i> Chat with Mentor</button>
+        <button><i class="fas fa-university"></i> Campus Support</button>
+        <button><i class="fas fa-robot"></i> Ask Bot</button>
+      </div>
+      <button onclick="goToWallet()"><i class="fas fa-wallet"></i> Credential Wallet</button>
+      <button onclick="closeApp()">Close App</button>
+    </div>
 
+    <!-- Credential Wallet -->
+    <div id="wallet-screen" style="display:none;">
+      <h2><i class="fas fa-wallet"></i> Credential Wallet</h2>
+      <p>Verified Badges:</p>
+      <ul>
+        <li>🎓 Verified Student</li>
+        <li>🤝 Trusted Mentor</li>
+      </ul>
+      <button onclick="goBackToHub()">Back to Hub</button>
+    </div>
+
+    <!-- Phone Home Screen -->
+    <div id="phone-home" style="display:none;">
+      <h2>Phone Home</h2>
+      <div class="apps">
+        <button onclick="openChrome()">🌐 Chrome</button>
+        <button>💬 Messages</button>
+        <button onclick="reopenThriveLine()">🛡 ThriveLine</button>
+      </div>
+    </div>
+
+    <!-- Fake Chrome Browser -->
+    <div id="chrome-screen" style="display:none;">
+      <h2>Chrome Browser</h2>
+      <p>Browsing...</p>
+      <a href="#" onclick="triggerSuspicious()">Suspicious Link</a><br>
+      <a href="#">Normal Link</a><br>
+      <button onclick="backToPhone()">Back to Home</button>
+    </div>
+
+    <!-- Risk Alert -->
+    <div id="alert" style="display:none;">
+      <p>⚠️ Possible scam detected — here’s why.</p>
+      <button onclick="closeAlert()">Close</button>
+    </div>
+
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
