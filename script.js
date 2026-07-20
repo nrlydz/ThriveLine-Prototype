@@ -13,7 +13,6 @@ function showScreen(screenId) {
   screen.classList.add("fade-in");
 }
 
-
 // Download → Open flow
 function downloadApp() {
   let btn = document.getElementById("download-btn");
@@ -24,10 +23,34 @@ function downloadApp() {
   };
 }
 
+// Populate scroll columns
+const dayCol = document.getElementById("day");
+const monthCol = document.getElementById("month");
+const yearCol = document.getElementById("year");
+
+for (let d = 1; d <= 31; d++) {
+  dayCol.innerHTML += `<div>${d}</div>`;
+}
+
+const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+months.forEach(m => monthCol.innerHTML += `<div>${m}</div>`);
+
+for (let y = 1980; y <= 2026; y++) {
+  yearCol.innerHTML += `<div>${y}</div>`;
+}
+
+function getSelectedValue(column) {
+  const scrollTop = column.scrollTop;
+  const itemHeight = column.firstElementChild.offsetHeight;
+  const index = Math.round(scrollTop / itemHeight);
+  return column.children[index].innerText;
+}
+
 // Age verification
 function verifyAge() {
-  let year = parseInt(document.getElementById("year").value);
-  let age = 2026 - year;
+  const year = parseInt(getSelectedValue(yearCol));
+  const age = 2026 - year;
+
   if (age >= 17 && age <= 24) {
     document.getElementById("age-screen").style.display = "none";
     document.getElementById("hub-screen").style.display = "block";
