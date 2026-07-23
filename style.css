@@ -199,3 +199,19 @@ h1 {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-8px); }
 }
+
+/* Onboarding 2 Custom Icons */
+.network-graphic {
+    font-size: 65px;
+}
+
+.heart-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+    background: #59E65A;
+    padding: 6px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(89, 230, 90, 0.3);
+}
