@@ -22,3 +22,20 @@ startButton.addEventListener("click", () => {
     }, 180);
 
 });
+
+/* ========================================= */
+/* SPLASH -> ONBOARDING 1 */
+/* ========================================= */
+
+const splash = document.querySelector(".splash-screen");
+const onboarding1 = document.getElementById("onboarding1");
+
+document
+    .getElementById("startBtn")
+    .addEventListener("click", () => {
+
+        splash.style.display = "none";
+
+        onboarding1.classList.remove("hidden");
+
+});
