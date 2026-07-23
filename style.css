@@ -197,3 +197,105 @@ button span{
     }
 
 }
+
+
+/* ========================================= */
+/* ONBOARDING SCREEN 1 */
+/* ========================================= */
+
+.hidden {
+    display: none;
+}
+
+.onboarding-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(180deg,#f8fbff,#eef7ff,#f7fffb);
+}
+
+.onboarding-content {
+    max-width: 380px;
+    animation: fadeUp .6s ease;
+}
+
+.onboard-icon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 30px;
+    border-radius: 30px;
+    background: linear-gradient(135deg,#2d6cff,#21d4fd,#59e65b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 56px;
+    box-shadow: 0 20px 40px rgba(45,108,255,.25);
+}
+
+.onboarding-content h2 {
+    font-size: 34px;
+    color: #102A43;
+    margin-bottom: 18px;
+}
+
+.onboarding-content p {
+    color: #667085;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.progress-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.progress-dots span {
+    width: 10px;
+    height: 10px;
+    background: #d7dce4;
+    border-radius: 50%;
+}
+
+.progress-dots .active-dot {
+    width: 34px;
+    border-radius: 50px;
+    background: linear-gradient(90deg,#2d6cff,#21d4fd,#59e65b);
+}
+
+#nextBtn1 {
+    width: 100%;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    background: linear-gradient(90deg,#2d6cff,#21d4fd,#59e65b);
+    box-shadow: 0 15px 35px rgba(45,108,255,.25);
+    transition: .25s;
+}
+
+#nextBtn1:hover {
+    transform: translateY(-3px);
+}
+
+@keyframes fadeUp {
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
